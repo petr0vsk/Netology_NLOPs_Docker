@@ -1,0 +1,294 @@
+Sending build context to Docker daemon  71.17kB
+Step 1/6 : FROM continuumio/miniconda3:latest
+ ---> 1f702ef68adb
+Step 2/6 : WORKDIR /app
+ ---> Running in 0bf201cfca71
+Removing intermediate container 0bf201cfca71
+ ---> 6f4a4d58efd3
+Step 3/6 : COPY 1.sh /app/1.sh
+ ---> 5849710e0c3d
+Step 4/6 : RUN chmod +x /app/1.sh
+ ---> Running in 5d60beb14188
+Removing intermediate container 5d60beb14188
+ ---> 628538d85a96
+Step 5/6 : RUN conda install -y mlflow boto3 pymysql
+ ---> Running in fc0d9032f0dd
+Channels:
+ - defaults
+Platform: linux-64
+Collecting package metadata (repodata.json): ...working... done
+Solving environment: ...working... done
+
+## Package Plan ##
+
+  environment location: /opt/conda
+
+  added / updated specs:
+    - boto3
+    - mlflow
+    - pymysql
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    abseil-cpp-20211102.0      |       hd4dd3e8_0        1020 KB
+    alembic-1.8.1              |  py312h06a4308_0         372 KB
+    aniso8601-9.0.1            |     pyhd3eb1b0_0          38 KB
+    arrow-cpp-14.0.2           |       h374c478_1        11.7 MB
+    aws-c-auth-0.6.19          |       h5eee18b_0          99 KB
+    aws-c-cal-0.5.20           |       hdbd6064_0          42 KB
+    aws-c-common-0.8.5         |       h5eee18b_0         207 KB
+    aws-c-compression-0.2.16   |       h5eee18b_0          18 KB
+    aws-c-event-stream-0.2.15  |       h6a678d5_0          50 KB
+    aws-c-http-0.6.25          |       h5eee18b_0         200 KB
+    aws-c-io-0.13.10           |       h5eee18b_0         150 KB
+    aws-c-mqtt-0.7.13          |       h5eee18b_0          67 KB
+    aws-c-s3-0.1.51            |       hdbd6064_0          71 KB
+    aws-c-sdkutils-0.1.6       |       h5eee18b_0          50 KB
+    aws-checksums-0.1.13       |       h5eee18b_0          48 KB
+    aws-crt-cpp-0.18.16        |       h6a678d5_0         213 KB
+    aws-sdk-cpp-1.10.55        |       h721c034_0         2.5 MB
+    bcrypt-3.2.0               |  py312h5eee18b_1          41 KB
+    blas-1.0                   |              mkl           6 KB
+    boost-cpp-1.82.0           |       hdb19cb5_2          11 KB
+    boto3-1.34.82              |  py312h06a4308_0         155 KB
+    botocore-1.34.82           |  py312h06a4308_0         7.3 MB
+    bottleneck-1.3.7           |  py312ha883a20_0         140 KB
+    brotli-1.0.9               |       h5eee18b_8          18 KB
+    brotli-bin-1.0.9           |       h5eee18b_8          19 KB
+    click-8.1.7                |  py312h06a4308_0         203 KB
+    cloudpickle-2.2.1          |  py312h06a4308_0          47 KB
+    conda-24.5.0               |  py312h06a4308_0         1.2 MB
+    contourpy-1.2.0            |  py312hdb19cb5_0         238 KB
+    cycler-0.11.0              |     pyhd3eb1b0_0          12 KB
+    docker-py-7.0.0            |  py312h06a4308_0         238 KB
+    entrypoints-0.4            |  py312h06a4308_0          17 KB
+    flask-2.2.5                |  py312h06a4308_0         186 KB
+    fonttools-4.51.0           |  py312h5eee18b_0         2.9 MB
+    freetype-2.12.1            |       h4a9f257_0         626 KB
+    frozendict-2.4.2           |  py312h06a4308_0          36 KB
+    gflags-2.2.2               |       h6a678d5_1         145 KB
+    gitdb-4.0.7                |     pyhd3eb1b0_0          50 KB
+    gitpython-3.1.37           |  py312h06a4308_0         330 KB
+    glog-0.5.0                 |       h6a678d5_1         107 KB
+    graphene-3.3               |  py312h06a4308_0         128 KB
+    graphql-core-3.2.3         |  py312h06a4308_1         617 KB
+    graphql-relay-3.2.0        |  py312h06a4308_0          43 KB
+    greenlet-3.0.1             |  py312h6a678d5_0         231 KB
+    grpc-cpp-1.48.2            |       he1ff14a_1         4.8 MB
+    gunicorn-21.2.0            |  py312h06a4308_0         176 KB
+    importlib-metadata-7.0.1   |  py312h06a4308_0          48 KB
+    intel-openmp-2023.1.0      |   hdb19cb5_46306        17.2 MB
+    itsdangerous-2.0.1         |     pyhd3eb1b0_0          18 KB
+    jinja2-3.1.3               |  py312h06a4308_0         330 KB
+    jmespath-1.0.1             |  py312h06a4308_0          47 KB
+    joblib-1.4.0               |  py312h06a4308_0         521 KB
+    jpeg-9e                    |       h5eee18b_1         262 KB
+    kiwisolver-1.4.4           |  py312h6a678d5_0          68 KB
+    lcms2-2.12                 |       h3be6417_0         312 KB
+    lerc-3.0                   |       h295c915_0         196 KB
+    libboost-1.82.0            |       h109eef0_2        19.5 MB
+    libbrotlicommon-1.0.9      |       h5eee18b_8          69 KB
+    libbrotlidec-1.0.9         |       h5eee18b_8          31 KB
+    libbrotlienc-1.0.9         |       h5eee18b_8         286 KB
+    libdeflate-1.17            |       h5eee18b_1          64 KB
+    libevent-2.1.12            |       hdbd6064_1         453 KB
+    libgfortran-ng-11.2.0      |       h00389a5_1          20 KB
+    libgfortran5-11.2.0        |       h1234567_1         2.0 MB
+    libpng-1.6.39              |       h5eee18b_0         304 KB
+    libprotobuf-3.20.3         |       he621ea3_0         2.4 MB
+    libsodium-1.0.18           |       h7b6447c_0         244 KB
+    libthrift-0.15.0           |       h1795dd8_2         4.0 MB
+    libtiff-4.5.1              |       h6a678d5_0         533 KB
+    libwebp-base-1.3.2         |       h5eee18b_0         387 KB
+    mako-1.2.3                 |  py312h06a4308_0         164 KB
+    markdown-3.4.1             |  py312h06a4308_0         159 KB
+    markupsafe-2.1.3           |  py312h5eee18b_0          25 KB
+    matplotlib-base-3.8.4      |  py312h526ad5a_0         7.6 MB
+    mkl-2023.1.0               |   h213fc3f_46344       171.5 MB
+    mkl-service-2.4.0          |  py312h5eee18b_1          66 KB
+    mkl_fft-1.3.8              |  py312h5eee18b_0         204 KB
+    mkl_random-1.2.4           |  py312hdb19cb5_0         284 KB
+    mlflow-2.12.2              |  py312h0389eee_0         5.3 MB
+    numexpr-2.8.7              |  py312hf827012_0         149 KB
+    numpy-1.26.4               |  py312hc5e2394_0          11 KB
+    numpy-base-1.26.4          |  py312h0da6c21_0         7.7 MB
+    openjpeg-2.4.0             |       h3ad879b_0         331 KB
+    openssl-3.0.13             |       h7f8727e_1         5.2 MB
+    orc-1.7.4                  |       hb3bc3d3_1         972 KB
+    pandas-2.2.1               |  py312h526ad5a_0        15.4 MB
+    paramiko-2.8.1             |     pyhd3eb1b0_0         139 KB
+    pillow-10.3.0              |  py312h5eee18b_0         915 KB
+    protobuf-3.20.3            |  py312h6a678d5_0         361 KB
+    pyarrow-14.0.2             |  py312hb107042_0         4.6 MB
+    pymysql-1.0.2              |  py312h06a4308_1          95 KB
+    pynacl-1.5.0               |  py312h5eee18b_0         1.1 MB
+    pyparsing-3.0.9            |  py312h06a4308_0         197 KB
+    python-dateutil-2.9.0post0 |  py312h06a4308_0         347 KB
+    python-tzdata-2023.3       |     pyhd3eb1b0_0         140 KB
+    pytz-2024.1                |  py312h06a4308_0         220 KB
+    pyyaml-6.0.1               |  py312h5eee18b_0         186 KB
+    querystring_parser-1.2.4   |  py312h06a4308_0          20 KB
+    re2-2022.04.01             |       h295c915_0         210 KB
+    s2n-1.3.27                 |       hdbd6064_0         382 KB
+    s3transfer-0.10.1          |  py312h06a4308_0         140 KB
+    scikit-learn-1.4.2         |  py312h526ad5a_1        10.1 MB
+    scipy-1.12.0               |  py312hc5e2394_0        23.3 MB
+    six-1.16.0                 |     pyhd3eb1b0_1          18 KB
+    smmap-4.0.0                |     pyhd3eb1b0_0          23 KB
+    snappy-1.1.10              |       h6a678d5_1          43 KB
+    sqlalchemy-2.0.25          |  py312h5eee18b_0         3.8 MB
+    sqlparse-0.4.4             |  py312h06a4308_0          88 KB
+    tbb-2021.8.0               |       hdb19cb5_0         1.6 MB
+    threadpoolctl-2.2.0        |     pyh0d69192_0          16 KB
+    typing-extensions-4.11.0   |  py312h06a4308_0           9 KB
+    typing_extensions-4.11.0   |  py312h06a4308_0          71 KB
+    unicodedata2-15.1.0        |  py312h5eee18b_0         519 KB
+    utf8proc-2.6.1             |       h5eee18b_1          93 KB
+    websocket-client-1.8.0     |  py312h06a4308_0         116 KB
+    werkzeug-2.3.8             |  py312h06a4308_0         443 KB
+    yaml-0.2.5                 |       h7b6447c_0          75 KB
+    zipp-3.17.0                |  py312h06a4308_0          24 KB
+    ------------------------------------------------------------
+                                           Total:       350.2 MB
+
+The following NEW packages will be INSTALLED:
+
+  abseil-cpp         pkgs/main/linux-64::abseil-cpp-20211102.0-hd4dd3e8_0 
+  alembic            pkgs/main/linux-64::alembic-1.8.1-py312h06a4308_0 
+  aniso8601          pkgs/main/noarch::aniso8601-9.0.1-pyhd3eb1b0_0 
+  arrow-cpp          pkgs/main/linux-64::arrow-cpp-14.0.2-h374c478_1 
+  aws-c-auth         pkgs/main/linux-64::aws-c-auth-0.6.19-h5eee18b_0 
+  aws-c-cal          pkgs/main/linux-64::aws-c-cal-0.5.20-hdbd6064_0 
+  aws-c-common       pkgs/main/linux-64::aws-c-common-0.8.5-h5eee18b_0 
+  aws-c-compression  pkgs/main/linux-64::aws-c-compression-0.2.16-h5eee18b_0 
+  aws-c-event-stream pkgs/main/linux-64::aws-c-event-stream-0.2.15-h6a678d5_0 
+  aws-c-http         pkgs/main/linux-64::aws-c-http-0.6.25-h5eee18b_0 
+  aws-c-io           pkgs/main/linux-64::aws-c-io-0.13.10-h5eee18b_0 
+  aws-c-mqtt         pkgs/main/linux-64::aws-c-mqtt-0.7.13-h5eee18b_0 
+  aws-c-s3           pkgs/main/linux-64::aws-c-s3-0.1.51-hdbd6064_0 
+  aws-c-sdkutils     pkgs/main/linux-64::aws-c-sdkutils-0.1.6-h5eee18b_0 
+  aws-checksums      pkgs/main/linux-64::aws-checksums-0.1.13-h5eee18b_0 
+  aws-crt-cpp        pkgs/main/linux-64::aws-crt-cpp-0.18.16-h6a678d5_0 
+  aws-sdk-cpp        pkgs/main/linux-64::aws-sdk-cpp-1.10.55-h721c034_0 
+  bcrypt             pkgs/main/linux-64::bcrypt-3.2.0-py312h5eee18b_1 
+  blas               pkgs/main/linux-64::blas-1.0-mkl 
+  boost-cpp          pkgs/main/linux-64::boost-cpp-1.82.0-hdb19cb5_2 
+  boto3              pkgs/main/linux-64::boto3-1.34.82-py312h06a4308_0 
+  botocore           pkgs/main/linux-64::botocore-1.34.82-py312h06a4308_0 
+  bottleneck         pkgs/main/linux-64::bottleneck-1.3.7-py312ha883a20_0 
+  brotli             pkgs/main/linux-64::brotli-1.0.9-h5eee18b_8 
+  brotli-bin         pkgs/main/linux-64::brotli-bin-1.0.9-h5eee18b_8 
+  click              pkgs/main/linux-64::click-8.1.7-py312h06a4308_0 
+  cloudpickle        pkgs/main/linux-64::cloudpickle-2.2.1-py312h06a4308_0 
+  contourpy          pkgs/main/linux-64::contourpy-1.2.0-py312hdb19cb5_0 
+  cycler             pkgs/main/noarch::cycler-0.11.0-pyhd3eb1b0_0 
+  docker-py          pkgs/main/linux-64::docker-py-7.0.0-py312h06a4308_0 
+  entrypoints        pkgs/main/linux-64::entrypoints-0.4-py312h06a4308_0 
+  flask              pkgs/main/linux-64::flask-2.2.5-py312h06a4308_0 
+  fonttools          pkgs/main/linux-64::fonttools-4.51.0-py312h5eee18b_0 
+  freetype           pkgs/main/linux-64::freetype-2.12.1-h4a9f257_0 
+  frozendict         pkgs/main/linux-64::frozendict-2.4.2-py312h06a4308_0 
+  gflags             pkgs/main/linux-64::gflags-2.2.2-h6a678d5_1 
+  gitdb              pkgs/main/noarch::gitdb-4.0.7-pyhd3eb1b0_0 
+  gitpython          pkgs/main/linux-64::gitpython-3.1.37-py312h06a4308_0 
+  glog               pkgs/main/linux-64::glog-0.5.0-h6a678d5_1 
+  graphene           pkgs/main/linux-64::graphene-3.3-py312h06a4308_0 
+  graphql-core       pkgs/main/linux-64::graphql-core-3.2.3-py312h06a4308_1 
+  graphql-relay      pkgs/main/linux-64::graphql-relay-3.2.0-py312h06a4308_0 
+  greenlet           pkgs/main/linux-64::greenlet-3.0.1-py312h6a678d5_0 
+  grpc-cpp           pkgs/main/linux-64::grpc-cpp-1.48.2-he1ff14a_1 
+  gunicorn           pkgs/main/linux-64::gunicorn-21.2.0-py312h06a4308_0 
+  importlib-metadata pkgs/main/linux-64::importlib-metadata-7.0.1-py312h06a4308_0 
+  intel-openmp       pkgs/main/linux-64::intel-openmp-2023.1.0-hdb19cb5_46306 
+  itsdangerous       pkgs/main/noarch::itsdangerous-2.0.1-pyhd3eb1b0_0 
+  jinja2             pkgs/main/linux-64::jinja2-3.1.3-py312h06a4308_0 
+  jmespath           pkgs/main/linux-64::jmespath-1.0.1-py312h06a4308_0 
+  joblib             pkgs/main/linux-64::joblib-1.4.0-py312h06a4308_0 
+  jpeg               pkgs/main/linux-64::jpeg-9e-h5eee18b_1 
+  kiwisolver         pkgs/main/linux-64::kiwisolver-1.4.4-py312h6a678d5_0 
+  lcms2              pkgs/main/linux-64::lcms2-2.12-h3be6417_0 
+  lerc               pkgs/main/linux-64::lerc-3.0-h295c915_0 
+  libboost           pkgs/main/linux-64::libboost-1.82.0-h109eef0_2 
+  libbrotlicommon    pkgs/main/linux-64::libbrotlicommon-1.0.9-h5eee18b_8 
+  libbrotlidec       pkgs/main/linux-64::libbrotlidec-1.0.9-h5eee18b_8 
+  libbrotlienc       pkgs/main/linux-64::libbrotlienc-1.0.9-h5eee18b_8 
+  libdeflate         pkgs/main/linux-64::libdeflate-1.17-h5eee18b_1 
+  libevent           pkgs/main/linux-64::libevent-2.1.12-hdbd6064_1 
+  libgfortran-ng     pkgs/main/linux-64::libgfortran-ng-11.2.0-h00389a5_1 
+  libgfortran5       pkgs/main/linux-64::libgfortran5-11.2.0-h1234567_1 
+  libpng             pkgs/main/linux-64::libpng-1.6.39-h5eee18b_0 
+  libprotobuf        pkgs/main/linux-64::libprotobuf-3.20.3-he621ea3_0 
+  libsodium          pkgs/main/linux-64::libsodium-1.0.18-h7b6447c_0 
+  libthrift          pkgs/main/linux-64::libthrift-0.15.0-h1795dd8_2 
+  libtiff            pkgs/main/linux-64::libtiff-4.5.1-h6a678d5_0 
+  libwebp-base       pkgs/main/linux-64::libwebp-base-1.3.2-h5eee18b_0 
+  mako               pkgs/main/linux-64::mako-1.2.3-py312h06a4308_0 
+  markdown           pkgs/main/linux-64::markdown-3.4.1-py312h06a4308_0 
+  markupsafe         pkgs/main/linux-64::markupsafe-2.1.3-py312h5eee18b_0 
+  matplotlib-base    pkgs/main/linux-64::matplotlib-base-3.8.4-py312h526ad5a_0 
+  mkl                pkgs/main/linux-64::mkl-2023.1.0-h213fc3f_46344 
+  mkl-service        pkgs/main/linux-64::mkl-service-2.4.0-py312h5eee18b_1 
+  mkl_fft            pkgs/main/linux-64::mkl_fft-1.3.8-py312h5eee18b_0 
+  mkl_random         pkgs/main/linux-64::mkl_random-1.2.4-py312hdb19cb5_0 
+  mlflow             pkgs/main/linux-64::mlflow-2.12.2-py312h0389eee_0 
+  numexpr            pkgs/main/linux-64::numexpr-2.8.7-py312hf827012_0 
+  numpy              pkgs/main/linux-64::numpy-1.26.4-py312hc5e2394_0 
+  numpy-base         pkgs/main/linux-64::numpy-base-1.26.4-py312h0da6c21_0 
+  openjpeg           pkgs/main/linux-64::openjpeg-2.4.0-h3ad879b_0 
+  orc                pkgs/main/linux-64::orc-1.7.4-hb3bc3d3_1 
+  pandas             pkgs/main/linux-64::pandas-2.2.1-py312h526ad5a_0 
+  paramiko           pkgs/main/noarch::paramiko-2.8.1-pyhd3eb1b0_0 
+  pillow             pkgs/main/linux-64::pillow-10.3.0-py312h5eee18b_0 
+  protobuf           pkgs/main/linux-64::protobuf-3.20.3-py312h6a678d5_0 
+  pyarrow            pkgs/main/linux-64::pyarrow-14.0.2-py312hb107042_0 
+  pymysql            pkgs/main/linux-64::pymysql-1.0.2-py312h06a4308_1 
+  pynacl             pkgs/main/linux-64::pynacl-1.5.0-py312h5eee18b_0 
+  pyparsing          pkgs/main/linux-64::pyparsing-3.0.9-py312h06a4308_0 
+  python-dateutil    pkgs/main/linux-64::python-dateutil-2.9.0post0-py312h06a4308_0 
+  python-tzdata      pkgs/main/noarch::python-tzdata-2023.3-pyhd3eb1b0_0 
+  pytz               pkgs/main/linux-64::pytz-2024.1-py312h06a4308_0 
+  pyyaml             pkgs/main/linux-64::pyyaml-6.0.1-py312h5eee18b_0 
+  querystring_parser pkgs/main/linux-64::querystring_parser-1.2.4-py312h06a4308_0 
+  re2                pkgs/main/linux-64::re2-2022.04.01-h295c915_0 
+  s2n                pkgs/main/linux-64::s2n-1.3.27-hdbd6064_0 
+  s3transfer         pkgs/main/linux-64::s3transfer-0.10.1-py312h06a4308_0 
+  scikit-learn       pkgs/main/linux-64::scikit-learn-1.4.2-py312h526ad5a_1 
+  scipy              pkgs/main/linux-64::scipy-1.12.0-py312hc5e2394_0 
+  six                pkgs/main/noarch::six-1.16.0-pyhd3eb1b0_1 
+  smmap              pkgs/main/noarch::smmap-4.0.0-pyhd3eb1b0_0 
+  snappy             pkgs/main/linux-64::snappy-1.1.10-h6a678d5_1 
+  sqlalchemy         pkgs/main/linux-64::sqlalchemy-2.0.25-py312h5eee18b_0 
+  sqlparse           pkgs/main/linux-64::sqlparse-0.4.4-py312h06a4308_0 
+  tbb                pkgs/main/linux-64::tbb-2021.8.0-hdb19cb5_0 
+  threadpoolctl      pkgs/main/noarch::threadpoolctl-2.2.0-pyh0d69192_0 
+  typing-extensions  pkgs/main/linux-64::typing-extensions-4.11.0-py312h06a4308_0 
+  typing_extensions  pkgs/main/linux-64::typing_extensions-4.11.0-py312h06a4308_0 
+  unicodedata2       pkgs/main/linux-64::unicodedata2-15.1.0-py312h5eee18b_0 
+  utf8proc           pkgs/main/linux-64::utf8proc-2.6.1-h5eee18b_1 
+  websocket-client   pkgs/main/linux-64::websocket-client-1.8.0-py312h06a4308_0 
+  werkzeug           pkgs/main/linux-64::werkzeug-2.3.8-py312h06a4308_0 
+  yaml               pkgs/main/linux-64::yaml-0.2.5-h7b6447c_0 
+  zipp               pkgs/main/linux-64::zipp-3.17.0-py312h06a4308_0 
+
+The following packages will be UPDATED:
+
+  conda                              24.3.0-py312h06a4308_0 --> 24.5.0-py312h06a4308_0 
+  openssl                                 3.0.13-h7f8727e_0 --> 3.0.13-h7f8727e_1 
+
+
+
+Downloading and Extracting Packages: ...working... done
+Preparing transaction: ...working... done
+Verifying transaction: ...working... done
+Executing transaction: ...working... done
+Removing intermediate container fc0d9032f0dd
+ ---> e3e8ff1ea568
+Step 6/6 : CMD ["./1.sh"]
+ ---> Running in 4265f2f7c876
+Removing intermediate container 4265f2f7c876
+ ---> 9486deec6fff
+Successfully built 9486deec6fff
+Successfully tagged netology-ml:netology-ml
